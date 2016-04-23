@@ -19,8 +19,6 @@ public class ServerFrameTest {
     public void TestConnection()
     {
         ServerFrame SF = new ServerFrame();
-        Thread Starter = new Thread();
-        Starter.run();
         assertTrue(true);
        
     }
