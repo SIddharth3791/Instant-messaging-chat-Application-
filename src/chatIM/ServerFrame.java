@@ -103,10 +103,10 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
         ServerScreen.setText("Server started...\n");
         
     }//GEN-LAST:event_ConnectButtonActionPerformed
-//marks:- Disconnet button will stop Server for 5 seconds and empty the portnumber Text
+//marks:- Disconnet button will stop Server for 2 seconds and empty the portnumber Text
     private void DisconnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisconnectButtonActionPerformed
     try {
-        Thread.sleep(5000); // server will take 5 second hold to stop server.
+        Thread.sleep(2000); // server will take 2 second hold to stop server.
         String Empty = "";  
         PortnumberTxt.setEditable(true);
         
