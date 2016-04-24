@@ -212,9 +212,12 @@ public class clientFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ConnectButtonActionPerformed
 
     private void disconnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disconnectButtonActionPerformed
+        username = UsernameTxt.getText();
         
         try {
-            socket.close();
+            socket.close(); //MArks:- Disconnect the user
+            ChatArea.append("You are disconnected \n");
+            
             
         } catch (IOException ex) {
             Logger.getLogger(clientFrame.class.getName()).log(Level.SEVERE, null, ex);
