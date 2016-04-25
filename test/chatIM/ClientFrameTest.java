@@ -42,7 +42,7 @@ public class ClientFrameTest {
         
     }
     
-    @Test
+    
     public void TestUserAdd()
     {
         clientFrame CF = new clientFrame();
