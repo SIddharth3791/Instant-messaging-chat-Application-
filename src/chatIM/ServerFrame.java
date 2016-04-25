@@ -97,10 +97,11 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
     }// </editor-fold>//GEN-END:initComponents
 //Marks:- Connection Button will start server
     private void ConnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectButtonActionPerformed
-        
+        final int portnumber = Integer.parseInt(PortnumberTxt.getText());
         Thread Starter = new Thread(new Starting());
         Starter.start();
         ServerScreen.setText("Server started...\n");
+        ServerScreen.append("your new port number is: " +portnumber+"\n");
         
     }//GEN-LAST:event_ConnectButtonActionPerformed
 //marks:- Disconnet button will stop Server for 2 seconds and empty the portnumber Text
@@ -149,6 +150,10 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
 
     public Clients(Socket sock, PrintWriter clientWrite)
     {
+     /**
+      * this method is for the thread which is started
+      * @result Particular thread will be allocated to clients 
+      */ 
       PrintW = clientWrite;
         
         try {
@@ -165,8 +170,12 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
        
     @Override
     public void run() {   
-    
-        String text;
+    /**
+     * Read the Text using BuffR and divide the Text using divider "@".
+     * @param string Array data will have name of client and the message store which will be divided using divider 
+     * @result once the data[] is figuered out it will call sendmessage method.
+     */
+         String text;
         String[] data;
         
         try {
@@ -198,6 +207,10 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
 }
     
     public void sendMessage(String text)
+    /**
+     * requires: Text from client and get iterated
+     * @Resulteffects:- Message from Clients store in array and printed
+    */
     {
         Iterator getMessage = clientOutputStreams.iterator();
         
@@ -219,14 +232,18 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
 
         @Override
         public void run() {
-            
+        /**
+         * Require: enter portnumber and loalhost to connect with other client. 
+         * @param client is store in Clientusers, ClientOutSreams stores message to send.
+         * @result both the clients will get notification about the connection
+        */
             clientOutputStreams = new ArrayList();
             Clientusers = new ArrayList();
 
             try {
                 final int portnumber = Integer.parseInt(PortnumberTxt.getText());// get portnumber to authenticate,  
                 ServerSocket SSR =  new ServerSocket(portnumber);
-                ServerScreen.append("your new port number is: " +portnumber+"\n");
+               // ServerScreen.append("your new port number is: " +portnumber+"\n");
                 while(true)
                 {
                     Socket sock = SSR.accept(); // this command accepts socket.
