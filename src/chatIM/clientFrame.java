@@ -25,22 +25,24 @@ public class clientFrame extends javax.swing.JFrame {
     public clientFrame() {
         initComponents();
     }
-
-     public void Messaging() 
-    {
-    /**
+ /**
      * need to start a new thread calling sendingMessag method
      * @result Thread will start communications. 
      */
+     public void Messaging() 
+    {
+   
          Thread IncomingReader = new Thread(new SendingMessage());
          IncomingReader.start();
     }
-    public void userAdd(String data) 
-    {
-       /**
+     
+      /**
         * data as a string which needs to be stored
         * @result all the data is stored under client arraylist 
         */
+    public void userAdd(String data) 
+    {
+      
          clients.add(data);
     }
     
@@ -159,14 +161,14 @@ public class clientFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendButtonActionPerformed
-        
-     /**
+  /**
       * TextArea will be empty and text type in TextArea Text box
       * @param TextArea will attach with username and divider for server to figure out the client name and message
       * @result another client Chat window will get the send text message along with sender username
-      */   
+      */  
+    private void SendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendButtonActionPerformed
+        
+    
         String nothing = "";
         if ((TextArea.getText()).equals(nothing)) {
             TextArea.setText("");
@@ -188,14 +190,15 @@ public class clientFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_SendButtonActionPerformed
 
-    private void ConnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectButtonActionPerformed
-      
-        /**
+    /**
          * Get port number and host address
          * @param pass it through the socket to start connect with server.
          * @param Address will be local host by default
          * @result Print writer will send it to server side and server window will get client connected notification 
          */
+    private void ConnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConnectButtonActionPerformed
+      
+        
          if (ConnectionDone == false) 
         {
             username = UsernameTxt.getText();
@@ -230,12 +233,13 @@ public class clientFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ConnectButtonActionPerformed
 
-    private void disconnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disconnectButtonActionPerformed
-        /**
+     /**
          * Socket is open to continue connection with another client
-         * @para socket can close input stream and output stream.
+         * @param socket can close input stream and output stream.
          * @result socket.close will end the connection.
          */
+    private void disconnectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disconnectButtonActionPerformed
+       
         
         try {
             socket.close(); //MArks:- Disconnect the user
@@ -279,14 +283,14 @@ public class clientFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
  
-
-public class SendingMessage implements Runnable
-{
 /**
  * Sending message will have to store divider, notifier, username and Actual message in string Array.
  * @para String Array data[] will have divider "@" to split Stream
  * @result Chat Area of the client will have username + Message from sender client
  */
+public class SendingMessage implements Runnable
+{
+
         @Override
         public void run() {
             String[] data;
