@@ -147,13 +147,13 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
        BufferedReader BuffR;
        Socket socket;
        PrintWriter PrintW;
-
-    public Clients(Socket sock, PrintWriter clientWrite)
-    {
      /**
       * this method is for the thread which is started
       * @result Particular thread will be allocated to clients 
-      */ 
+      */
+    public Clients(Socket sock, PrintWriter clientWrite)
+    {
+     
       PrintW = clientWrite;
         
         try {
@@ -167,14 +167,14 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
         
     }
        
-       
-    @Override
-    public void run() {   
-    /**
+       /**
      * Read the Text using BuffR and divide the Text using divider "@".
      * @param string Array data will have name of client and the message store which will be divided using divider 
      * @result once the data[] is figuered out it will call sendmessage method.
      */
+    @Override
+    public void run() {   
+   
          String text;
         String[] data;
         
@@ -205,12 +205,13 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
         
     }
 }
-    
-    public void sendMessage(String text)
     /**
-     * requires: Text from client and get iterated
+     *  Text from client side
+     * @param text from client and get iterated
      * @Resulteffects:- Message from Clients store in array and printed
     */
+    public void sendMessage(String text)
+    
     {
         Iterator getMessage = clientOutputStreams.iterator();
         
@@ -229,14 +230,14 @@ ArrayList clientOutputStreams;// sets messaging from client in array and sends o
     
 
  public class Starting implements Runnable{
-
-        @Override
-        public void run() {
-        /**
+/**
          * Require: enter portnumber and loalhost to connect with other client. 
          * @param client is store in Clientusers, ClientOutSreams stores message to send.
          * @result both the clients will get notification about the connection
         */
+        @Override
+        public void run() {
+        
             clientOutputStreams = new ArrayList();
             Clientusers = new ArrayList();
 
