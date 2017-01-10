@@ -1,6 +1,13 @@
-•	Technologies used for this project was java and PostgreSQL
-•	ECU Gym Management System was a windows based application developed using NetBeans IDE 
-•	This project helped member to get workouts, which gets randomly generated using categories like Body Part, Level of Fitness and Type of Workout 
-•	Application helped user to select supplements which gets divided among wide range of varieties like Protein, Fat Burner, BCCA, Pre-Workout 
-•	The main functionality of this project was to generate workouts according to user’s goal and user can track it by sending mail to register E-mail address
-•	Admin was another actor whose main role was to maintain updated database for workout & supplements and respond to all the FAQ Emails
+-> Project was developed using technology like java and NeatBeans.
+
+-> Several Java technologies, including networking (to support connectivity over a network), sockets and I/O (to support real-time,
+text-based communication), and threads (to support two or more people communicating concurrently) are used to develop this
+project. GUI for client and server was developed using NetBeans to make user-friendly experience
+
+-> This project includes both the client and the server side.
+
+->An IM conversation happens in real time, one person types some text, presses "send" and the other person (almost) immediately
+receives the text
+
+-> An IM conversation can happen between two or more people, as well as person to be involved in multiple conversations at the
+same time
